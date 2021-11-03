@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.options import Options
 from discord.utils import get
 from discord.ext import commands
 import random
+import os
 
 f=open("C:/Users/0423j/PycharmProjects/디스코드 유틸봇/list.txt","rt",encoding='UTF8')
 line=f.readlines()
@@ -338,5 +339,5 @@ async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
         await ctx.send("명령어를 찾지 못했습니다")
 
-
-bot.run('OTA1MDgyMzUwNTg3NzcyOTc4.YYE5nw.yusBxQLBMerchUEgVEgCYffUTOQ')
+access_token = os.environ["BOT_TOKEN"]
+bot.run(access_token)
